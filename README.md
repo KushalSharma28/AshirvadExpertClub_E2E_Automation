@@ -1,4 +1,4 @@
-content = """# Ashirvad Experts' Club - Mobile Automation Framework
+# Ashirvad Experts' Club - Mobile Automation Framework
 
 ![Java](https://img.shields.io/badge/Java-17-orange.svg)
 ![Appium](https://img.shields.io/badge/Appium-2.x-blue.svg)
