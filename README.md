@@ -37,6 +37,7 @@ ashirvad-mobile-automation/
         └── com/ashirvad/tests/       
             ├── BaseTest.java       # Driver lifecycle & UiAutomator2 setup
             └── AshirvadE2ETest.java# Test execution sequence
+```
 
 ```text
 ashirvad-appium/
@@ -62,3 +63,4 @@ ashirvad-appium/
         └── resources/
             ├── testng.xml
             └── logback-test.xml
+```            
