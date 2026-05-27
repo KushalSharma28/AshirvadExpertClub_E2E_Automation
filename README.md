@@ -1,9 +1,9 @@
 # Ashirvad Experts' Club - Mobile Automation Framework
 
-![Java](https://img.shields.io/badge/Java-17-orange.svg)
-![Appium](https://img.shields.io/badge/Appium-2.x-blue.svg)
-![TestNG](https://img.shields.io/badge/TestNG-7.x-green.svg)
-![Maven](https://img.shields.io/badge/Maven-Build-red.svg)
+![Java](https://img.shields.io/badge/Java-25.0.3-orange.svg)
+![Appium](https://img.shields.io/badge/Appium-3.4.2-blue.svg)
+![TestNG](https://img.shields.io/badge/TestNG-7.12.0-green.svg)
+![Maven](https://img.shields.io/badge/Maven-Build-3.9-red.svg)
 
 ## 📌 Project Overview
 This repository contains a robust, production-ready mobile test automation framework for the **Ashirvad Experts' Club** Android application. Built with modern engineering practices, it leverages **Appium 2.x** and **Java 17** to execute end-to-end (E2E) registration and login workflows. 
@@ -17,11 +17,11 @@ The framework is designed to emphasize **problem-solving impacts, high maintaina
 * **Complex Flow Navigation:** Successfully handles intricate multi-step workflows, including form submissions, dropdown selections, and navigating 3rd-party contexts (e.g., DigiLocker integration flows).
 
 ## 🛠️ Technology Stack
-* **Language:** Java 17
-* **Automation Engine:** Appium Java Client (v9.x)
-* **Underlying API:** Selenium 4.x
-* **Test Runner:** TestNG (v7.x)
-* **Build Tool:** Maven
+* **Language:** Java 25.0.3
+* **Automation Engine:** Appium Java Client (v10.1.1)
+* **Underlying API:** Selenium 4
+* **Test Runner:** TestNG (v7.12.0)
+* **Build Tool:** Maven (3.9)
 
 ## 📂 Project Structure
 ```text
@@ -37,3 +37,28 @@ ashirvad-mobile-automation/
         └── com/ashirvad/tests/       
             ├── BaseTest.java       # Driver lifecycle & UiAutomator2 setup
             └── AshirvadE2ETest.java# Test execution sequence
+
+```text
+ashirvad-appium/
+├── pom.xml
+└── src/
+    ├── main/java/com/ashirvad/
+    │   ├── base/
+    │   │   ├── AppiumConfig.java        ← UiAutomator2Options driver factory
+    │   │   └── DriverManager.java       ← ThreadLocal<AndroidDriver> holder
+    │   ├── pages/
+    │   │   ├── LanguageSelectionPage.java
+    │   │   ├── MobileNumberPage.java
+    │   │   ├── OtpVerificationPage.java
+    │   │   ├── RegistrationFormPage.java
+    │   │   ├── DigiLockerPage.java      ← WebView + native context switching
+    │   │   └── DashboardPage.java
+    │   └── utils/
+    │       └── WaitUtils.java           ← All explicit waits, zero implicit
+    └── test/
+        ├── java/com/ashirvad/tests/
+        │   ├── BaseTest.java            ← @BeforeClass / @AfterClass
+        │   └── RegistrationLoginTest.java ← 11 @Test methods, priority-ordered
+        └── resources/
+            ├── testng.xml
+            └── logback-test.xml
